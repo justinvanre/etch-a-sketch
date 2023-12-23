@@ -9,3 +9,33 @@
 body {
     margin: 0;
 }
+
+header {
+    margin-bottom: 50px;
+}
+
+header > label {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: inline-block;
+    width: 540px;
+    height: 540px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    box-shadow: 1px 2px 60px 1px rgba(211, 211, 211, 0.5);
+
+    margin-inline: auto;
+}
+
+.container > div {
+    background-color: black;
+
+    flex-shrink: 0;
+}
+
