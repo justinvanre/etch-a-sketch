@@ -1,3 +1,4 @@
+const container = document.querySelector('.container');
 
 function createDiv(xDimension, yDimension) {
     const div = document.createElement('div');
@@ -19,7 +20,6 @@ function createDiv(xDimension, yDimension) {
 }
 
 function renderCanvas(amountDivPSide) {
-    const container = document.querySelector('.container');
 
     const widthCanvas = container.clientWidth; 
     const widthGrid = widthCanvas / amountDivPSide;
@@ -31,4 +31,12 @@ function renderCanvas(amountDivPSide) {
 }
 
 
-renderCanvas(50); 
+let rangeValue = document.querySelector('#amountDivs');
+
+renderCanvas(rangeValue.valueAsNumber);
+
+rangeValue.addEventListener('change', () => {
+    container.innerHTML = ''; 
+
+    renderCanvas(rangeValue.valueAsNumber)
+});
