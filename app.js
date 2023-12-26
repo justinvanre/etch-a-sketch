@@ -25,9 +25,13 @@ function renderCanvas(amountDivPSide) {
     const widthGrid = widthCanvas / amountDivPSide;
     const amountGridToRender = (widthCanvas**2) / (widthGrid**2); 
 
+    const fragment = document.createDocumentFragment();
+
     for (let i = 0; i < amountGridToRender; i++) {
-        container.appendChild(createDiv(widthGrid, widthGrid))
+        fragment.appendChild(createDiv(widthGrid, widthGrid));
     }
+
+    container.appendChild(fragment);
 }
 
 
@@ -36,7 +40,7 @@ let rangeValue = document.querySelector('#amountDivs');
 renderCanvas(rangeValue.valueAsNumber);
 
 rangeValue.addEventListener('change', () => {
-    container.innerHTML = ''; 
+    container.textContent = ''; 
 
     renderCanvas(rangeValue.valueAsNumber)
 });
